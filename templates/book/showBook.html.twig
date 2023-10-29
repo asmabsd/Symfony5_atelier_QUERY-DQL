@@ -1,0 +1,8 @@
+{% if book is defined %}
+    <h1>Détails du livre</h1>
+    <p>ID du livre : {{ book.id }}</p>
+    <p>Titre : {{ book.title }}</p>
+   
+{% else %}
+    <p>Livre introuvable</p>
+{% endif %}

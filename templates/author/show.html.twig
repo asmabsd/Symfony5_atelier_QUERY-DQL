@@ -1,0 +1,37 @@
+
+
+
+<p>Nombre des auteurs : {{ authorshtml | length }}</p>
+
+{% if authorshtml is defined and authorshtml|length  > 0  %}
+<table border="3">
+    <tr>
+        <td>id</td>
+        <td>picture</td>
+        <td>username</td>
+        <td>email</td>
+        <td>nbr_books</td>
+        <td>Action</td>
+    </tr>
+    {% set total = 0 %}
+    {% for a in authorshtml %}
+    <tr>
+        <td>{{a.id}}</td>
+        <td><img src="{{asset(a.picture)}}" alt="pic" style="height: 100; width: 100;"></td>
+        <td>{{a.username | upper}}</td>
+        <td>{{a.email}}</td>
+        <td>{{a.nb_books}}</td>
+
+        {% set total = total + a.nb_books %}
+
+        <td><a href="{{path('authorDetails',{'id': a.id})}}">Details</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p> Nombre Total des livres : {{ total }}</p>
+
+{% else %}
+<p> Authors not found</p>
+
+{% endif %}

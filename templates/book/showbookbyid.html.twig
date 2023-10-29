@@ -1,0 +1,22 @@
+{% if book is defined %}
+<tr>
+    
+   
+    
+    <td>id</td>
+        <td>title</td>
+        <td>category</td>
+        <td>publicationDate</td>
+        <td>published</td>
+
+</tr>
+    <tr>
+        <td>{{book.id}}</td>
+        <td>{{book.title| upper}}</td>
+        <td>{{book.category}}</td>
+         <td>{{ b.publicationDate.format('Y-m-d H:i:s') }}</td>
+         <td>{{book.published}}</td>
+    </tr>
+{% else %}
+    <p>Livre introuvable</p>
+{% endif %}

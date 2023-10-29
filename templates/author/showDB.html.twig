@@ -1,0 +1,23 @@
+
+
+<table border="6">
+    <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>email</td>
+        <td>nb_books</td>
+        #<td>Action</td>
+        #<td>Action</td>
+       
+    </tr>
+    {% for a in authors %}
+    <tr>
+        <td>{{a.id}}</td>
+        <td>{{a.username | upper}}</td>
+        <td>{{a.email}}</td>
+       <td> {{a.nb_books}}</td>
+       
+       
+    </tr>
+    {% endfor %}
+</table>
